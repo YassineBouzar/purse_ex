@@ -12,7 +12,6 @@ import java.util.Date;
 
 @Slf4j
 @RestControllerAdvice
-@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.REACTIVE)
 public class ApiExceptionHandler {
 
     @ExceptionHandler(BadRequestException.class)
