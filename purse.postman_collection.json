@@ -1,22 +1,19 @@
 {
 	"info": {
-		"_postman_id": "ee57141d-3fa5-4564-bd4e-7f579dcc9459",
+		"_postman_id": "99278a32-68b4-45c4-8507-b35146c0e86f",
 		"name": "purse",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "16373541"
+		"_exporter_id": "29736161"
 	},
 	"item": [
 		{
 			"name": "create",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"total\":\"54.80\",\n    \"type\":\"BANK_CARD\",\n    \"status\":\"INIT\",\n        \"orderLine\":[\n            {\n                \"name\":\"paires de gants de sk\",\n                \"ref\":\"paires\",\n                \"quantity\":\"4\",\n                \"price\":\"10.00\"\n            },\n            {\n                \"name\":\"bonnet en laine\",\n                \"ref\":\"bonnet\",\n                \"quantity\":\"1\",\n                \"price\":\"14.80\"\n            }\n        ]\n}",
+					"raw": "{\n    \"total\":\"54.80\",\n    \"type\":\"BANK_CARD\",\n    \"status\":\"INIT\",\n        \"orderLineList\":[\n            {\n                \"name\":\"paires de gants de sk\",\n                \"ref\":\"paires\",\n                \"quantity\":\"4\",\n                \"price\":\"10.00\"\n            },\n            {\n                \"name\":\"bonnet en laine\",\n                \"ref\":\"bonnet\",\n                \"quantity\":\"1\",\n                \"price\":\"14.80\"\n            }\n        ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -40,21 +37,9 @@
 		},
 		{
 			"name": "All transactions",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"total\":\"10\",\n    \"type\":\"BANK_CARD\",\n    \"status\":\"INIT\",\n        \"orderLine\":[\n            {\n                \"name\":\"sack\",\n                \"ref\":\"name\",\n                \"quantity\":\"1\",\n                \"price\":\"10\"\n            },\n            {\n                \"name\":\"sack\",\n                \"ref\":\"name\",\n                \"quantity\":\"1\",\n                \"price\":\"10\"\n            }\n        ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "http://localhost:8080/api/transaction",
 					"protocol": "http",
@@ -88,7 +73,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/transaction/{{transaction_id}}",
+					"raw": "http://localhost:8080/api/transaction/650bf76b69d59f29e6aa1c67",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -97,7 +82,7 @@
 					"path": [
 						"api",
 						"transaction",
-						"{{transaction_id}}"
+						"650bf76b69d59f29e6aa1c67"
 					]
 				}
 			},
@@ -105,15 +90,12 @@
 		},
 		{
 			"name": "update",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"total\":\"54.80\",\n    \"type\":\"BANK_CARD\",\n    \"status\":\"AUTHORIZED\",\n        \"orderLine\":[\n            {\n                \"name\":\"paires de gants de sk\",\n                \"ref\":\"paires\",\n                \"quantity\":\"4\",\n                \"price\":\"10.00\"\n            },\n            {\n                \"name\":\"bonnet en laine\",\n                \"ref\":\"bonnet\",\n                \"quantity\":\"1\",\n                \"price\":\"14.80\"\n            }\n        ]\n}",
+					"raw": "{\n    \"total\":\"54.80\",\n    \"type\":\"BANK_CARD\",\n    \"status\":\"AUTHORIZED\",\n        \"orderLineList\":[\n            {\n                \"name\":\"paires de gants de sk\",\n                \"ref\":\"paires\",\n                \"quantity\":\"4\",\n                \"price\":\"10.00\"\n            },\n            {\n                \"name\":\"bonnet en laine\",\n                \"ref\":\"bonnet\",\n                \"quantity\":\"1\",\n                \"price\":\"14.80\"\n            }\n        ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -121,7 +103,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/transaction/{{transaction_id}}",
+					"raw": "http://localhost:8080/api/transaction/650bf76b69d59f29e6aa1c67",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -130,7 +112,7 @@
 					"path": [
 						"api",
 						"transaction",
-						"{{transaction_id}}"
+						"650bf76b69d59f29e6aa1c67"
 					]
 				}
 			},
